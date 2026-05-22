@@ -1,18 +1,17 @@
-﻿using System;
-using System.Windows.Forms;
-
-namespace ConsoleApp2
+﻿namespace ProjectDumpTruck
 {
-	internal static class Program
-	{
-		/// <summary>
-		/// The main entry point for the application.
-		/// </summary>
-		[STAThread]
-		static void Main()
-		{
-			ApplicationConfiguration.Initialize();
-			Application.Run(new FormTruck());   // ← вот здесь запускается твоя форма
-		}
-	}
+    internal static class Program
+    {
+        /// <summary>
+        ///  The main entry point for the application.
+        /// </summary>
+        [STAThread]
+        static void Main()
+        {
+            // To customize application configuration such as set high DPI settings or default font,
+            // see https://aka.ms/applicationconfiguration.
+            ApplicationConfiguration.Initialize();
+            Application.Run(new FormCarCollection());
+        }
+    }
 }
