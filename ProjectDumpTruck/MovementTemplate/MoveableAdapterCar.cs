@@ -18,7 +18,7 @@ public class MoveableAdapterCar : IMoveableObject
     ///  Конструктор 
     /// </summary>
     /// <param name="car">Объект класса DrawningCar</param>
-    public MoveableAdapterCar(DrawningCar car)
+    public MoveableAdapterCar(DrawningCar car )
     {
         _car = car;
     }
@@ -37,7 +37,7 @@ public class MoveableAdapterCar : IMoveableObject
 
     public void MoveObject(MovementDirection direction)
     {
-        switch (direction)
+        switch (direction) 
         {
             case MovementDirection.Left:
                 _car?.MoveLeft();

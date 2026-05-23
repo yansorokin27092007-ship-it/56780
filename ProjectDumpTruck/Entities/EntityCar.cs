@@ -14,7 +14,7 @@ public class EntityCar
     /// Скорость
     /// </summary>
     public int Speed { get; init; }
-
+    
     /// <summary>
     /// Вес
     /// </summary>

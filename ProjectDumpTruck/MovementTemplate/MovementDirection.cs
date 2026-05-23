@@ -25,3 +25,4 @@ public enum MovementDirection
     /// </summary>
     Right = 4
 }
+

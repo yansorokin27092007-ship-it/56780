@@ -9,7 +9,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="E:\FormTruck.cs" Link="FormTruck.cs" />
+    <None Remove="Resources\1.jpg" />
+    <None Remove="Resources\11.jpg" />
+    <None Remove="Resources\2.jpg" />
+    <None Remove="Resources\3.jpg" />
+    <None Remove="Resources\4.jpg" />
   </ItemGroup>
 
   <ItemGroup>

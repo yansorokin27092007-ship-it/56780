@@ -1,4 +1,4 @@
-﻿namespace ProjectDumpTruck
+namespace ProjectDumpTruck
 {
     internal static class Program
     {

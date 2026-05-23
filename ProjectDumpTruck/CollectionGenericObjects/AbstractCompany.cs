@@ -54,7 +54,7 @@ public abstract class AbstractCompany
     /// <param name="car">Добавляемый объект</param> 
     /// <returns>Компания с добавленным объектом</returns> 
     public static int operator +(AbstractCompany company, DrawningCar car) => company._collection.InsertObject(car);
-
+   
     /// <summary> 
     /// Перегрузка оператора удаления для класса 
     /// </summary> 
@@ -113,6 +113,6 @@ public abstract class AbstractCompany
 
     /// <summary> 
     /// Вычисление максимального количества элементов, который можно разместить в окне
-    /// </summary> 
-    private int CalcMaxCount() => (int)(Math.Truncate((double)_pictureWidth / _placeSizeWidth) * Math.Truncate((double)_pictureHeight / _placeSizeHeight));
+ /// </summary> 
+ private int CalcMaxCount() => (int)(Math.Truncate((double)_pictureWidth / _placeSizeWidth) * Math.Truncate((double)_pictureHeight / _placeSizeHeight));
 }

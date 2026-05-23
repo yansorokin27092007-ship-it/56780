@@ -58,7 +58,7 @@ public class DrawningCar
     /// <summary>
     /// Конструктор без параметров для инициализации простых полей
     /// </summary>
-    private DrawningCar()
+    private DrawningCar() 
     {
         _startPosX = null;
         _startPosY = null;
@@ -80,7 +80,7 @@ public class DrawningCar
     /// </summary>
     /// <param name="drawningCarWidth"></param>
     /// <param name="drawningCarHeight"></param>
-    protected DrawningCar(int drawningCarWidth, int drawningCarHeight) : this()
+    protected DrawningCar(int drawningCarWidth, int drawningCarHeight) : this() 
     {
         _drawningCarWidth = drawningCarWidth;
         _drawningCarHeight = drawningCarHeight;
@@ -115,7 +115,7 @@ public class DrawningCar
     public void MoveRight()
     {
         if (_entityCar is null || !_startPosX.HasValue)
-        {
+        { 
             return;
         }
         _startPosX += (int)_entityCar.Step;
@@ -155,7 +155,7 @@ public class DrawningCar
         {
             return;
         }
-
+        
         int x = _startPosX.Value;
         int y = _startPosY.Value;
         Color bodyColor = _entityCar.BodyColor;
@@ -180,7 +180,7 @@ public class DrawningCar
             g.FillEllipse(wheelBrush, x + 70, y + 30, 20, 20);
         }
 
-
+       
     }
 }
 

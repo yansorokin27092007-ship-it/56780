@@ -28,7 +28,7 @@ public class DrawningDumpTruck : DrawningCar
         }
         int x = _startPosX.Value;
         int y = _startPosY.Value;
-        Pen pen = new(Color.Black);
+        Pen pen = new (Color.Black);
         Brush additionalBrush = new SolidBrush(dumpTruck.AdditionalColor);
 
         //кузов
@@ -39,11 +39,11 @@ public class DrawningDumpTruck : DrawningCar
                 g.FillRectangle(bodyBrush, x, y + 30, 90, 25);
             }
         }
-        _startPosX += 8;
-        _startPosY += 18;
+        _startPosX += 8;  
+        _startPosY += 18;  
         base.DrawTransport(g);
-        _startPosX -= 8;
-        _startPosY -= 18;
+        _startPosX -= 8;  
+        _startPosY -= 18; 
 
         //тент
         if (dumpTruck.Tent)

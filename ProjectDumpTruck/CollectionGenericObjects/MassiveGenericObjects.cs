@@ -52,7 +52,7 @@ public class MassiveGenericObjects<T> : ICollectionGenericObjects<T>
     {
         if (position >= _collection.Length)
         {
-            return null;
+            return null; 
         }
         return _collection[position];
     }
@@ -73,7 +73,7 @@ public class MassiveGenericObjects<T> : ICollectionGenericObjects<T>
                 return i;
             }
         }
-        return -1;
+        return -1; 
     }
 
     // проверка, что позиция не выходит за границы массива 

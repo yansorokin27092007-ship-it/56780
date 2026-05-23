@@ -1,10 +1,9 @@
-﻿using ProjectDumpTruck.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WinFormsApp2;
+using ProjectDumpTruck.Entities;
 
 namespace ProjectDumpTruck.Drawnings;
 public class CanvasForCar
@@ -50,7 +49,7 @@ public class CanvasForCar
         // если не удается - завершаем работу метода 
         if (car == null)
         {
-            return false;
+        return false;
         }
 
         // если размеры форм есть, то проверяем, что по размерам объект можно поместить в поле
@@ -109,7 +108,7 @@ public class CanvasForCar
             correctedY = _canvasHeight.Value - _drawningCar.DrawningCarHeight;
         }
         _drawningCar.SetPosition(correctedX, correctedY);
-    }
+        }
 
     /// <summary> 
     /// Изменение направления перемещения 
@@ -124,37 +123,36 @@ public class CanvasForCar
             return false;
         }
         bool hasTent = _drawningCar is DrawningDumpTruck dumpTruck && dumpTruck.HasTent;
-        switch (direction)
-        {
+        switch (direction) 
+        { 
 
-            //влево 
-            case DirectionType.Left:
-                if (_drawningCar.PosX.Value - _drawningCar.CarStep.Value > 0)
-                {
-                    _drawningCar.MoveLeft();
-                    return true;
-                }
-                break;
+              //влево 
+              case DirectionType.Left: 
+                    if (_drawningCar.PosX.Value - _drawningCar.CarStep.Value > 0) 
+                    { 
+                          _drawningCar.MoveLeft(); 
+                          return true; 
+                    } 
+                    break;
 
             //вверх 
-            case DirectionType.Up:
-                if (hasTent)
-                {
-                    if (_drawningCar.PosY.Value - _drawningCar.CarStep.Value - 15 >= 0)
+              case DirectionType.Up:
+                    if (hasTent)
                     {
+                       if (_drawningCar.PosY.Value - _drawningCar.CarStep.Value - 15 >= 0)
+                       {
                         _drawningCar.MoveUp();
                         return true;
+                       }
                     }
-                }
-                else
-                {
-
-                    if (_drawningCar.PosY.Value - _drawningCar.CarStep.Value > 0)
-                    {
+                    else { 
+                    
+                       if (_drawningCar.PosY.Value - _drawningCar.CarStep.Value > 0)
+                       {
                         _drawningCar.MoveUp();
                         return true;
+                       }
                     }
-                }
                 break;
 
             // вправо 
@@ -164,35 +162,36 @@ public class CanvasForCar
                     _drawningCar.MoveRight();
                     return true;
                 }
-                break;
+                    break;
 
-            //вниз 
-            case DirectionType.Down:
+              //вниз 
+              case DirectionType.Down:
                 if (_drawningCar.PosY.Value + _drawningCar.CarStep.Value + _drawningCar.DrawningCarHeight <= _canvasHeight.Value)
                 {
                     _drawningCar.MoveDown();
                     return true;
                 }
 
-                break;
-        }
-        return false;
-    }
-
-    /// <summary> 
-    /// Прорисовка полотна 
-    /// </summary> 
-    /// <returns></returns> 
-    public Bitmap? DrawCanvas()
+                    break;
+              }         
+              return false; 
+    } 
+ 
+ /// <summary> 
+ /// Прорисовка полотна 
+ /// </summary> 
+ /// <returns></returns> 
+ public Bitmap? DrawCanvas()
+ {
+    if (!_canvasWidth.HasValue || !_canvasHeight.HasValue)
     {
-        if (!_canvasWidth.HasValue || !_canvasHeight.HasValue)
-        {
-            return null;
-        }
-
-        Bitmap bmp = new(_canvasWidth.Value, _canvasHeight.Value);
-        Graphics graphics = Graphics.FromImage(bmp);
-        _drawningCar?.DrawTransport(graphics);
-        return bmp;
+        return null;
     }
+
+    Bitmap bmp = new(_canvasWidth.Value, _canvasHeight.Value);
+    Graphics graphics = Graphics.FromImage(bmp);
+    _drawningCar?.DrawTransport(graphics);
+    return bmp;
+ } 
 }
+

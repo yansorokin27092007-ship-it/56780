@@ -9,7 +9,7 @@ public interface ICollectionGenericObjects<T>
     /// <summary>
     /// Количество объектов в коллекции
     /// </summary>
-    int CountObjects { get; }
+    int CountObjects {  get; }
 
     /// <summary>
     /// Установка максимального количества элементов
@@ -27,11 +27,11 @@ public interface ICollectionGenericObjects<T>
     /// Добавление объекта в коллекцию 
     /// </summary> 
     /// <param name="obj">Добавляемый объект</param> 
-    /// <returns>true - вставка прошла удачно, false - вставка не удалась</returns>
+    /// <returns>true - вставка прошлааааа удачно, false - вставка не удалась</returns>
     int InsertObject(T obj);
 
     /// <summary> 
-    /// Добавление объекта в коллекцию на конкретную позицию 
+    /// Добавление объекта в кооллекцию на конкретную позицию 
     /// </summary> 
     /// <param name="obj">Добавляемый объект</param> 
     /// <param name="position">Позиция</param> 

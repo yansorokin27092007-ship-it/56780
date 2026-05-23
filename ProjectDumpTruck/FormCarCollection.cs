@@ -1,6 +1,5 @@
 ﻿using ProjectDumpTruck.CollectionGenericObjects;
 using ProjectDumpTruck.Drawnings;
-using System.Windows.Forms;
 
 namespace ProjectDumpTruck
 {
@@ -37,12 +36,12 @@ namespace ProjectDumpTruck
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void ButtonAddAdvancedDumpTruck_Click(object sender, EventArgs e) => CreateAndAddObjectCollection(nameof(DrawningDumpTruck));
-
+      
         /// <summary>
         /// Создание объект класса-перемещения и добавление его в коллекцию
         /// </summary>
         /// <param name="type"></param>
-        private void CreateAndAddObjectCollection(string type)
+        private void CreateAndAddObjectCollection (string type)
         {
             Random random = new();
             DrawningCar car;
@@ -56,12 +55,12 @@ namespace ProjectDumpTruck
                     ColorDialog bodyColorDialog = new();
                     ColorDialog additionalColorDialog = new();
                     bool hasBody = Convert.ToBoolean(random.Next(0, 2));
-                    bool hasTent = Convert.ToBoolean(random.Next(0, 2));
+                        bool hasTent = Convert.ToBoolean(random.Next(0, 2));
 
-                    car = new DrawningDumpTruck(random.Next(100, 300), random.Next(1000, 3000), GetColor(random), GetColor(random), hasBody, hasTent);
+                        car = new DrawningDumpTruck(random.Next(100, 300), random.Next(1000, 3000), GetColor(random), GetColor(random), hasBody, hasTent);
                     break;
                 default:
-                    return;
+                   return;
             }
             int result = _company + car;
             if (result != -1)
@@ -106,7 +105,7 @@ namespace ProjectDumpTruck
             }
 
             int pos = Convert.ToInt32(maskedTextBoxPosition.Text);
-            DrawningCar? removedCar = _company - pos;
+            DrawningCar? removedCar = _company - pos;  
             if (removedCar is not null)
             {
                 MessageBox.Show("Объект удален");

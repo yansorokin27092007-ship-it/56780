@@ -17,8 +17,8 @@ public static class TemplateMovementFactory
     /// <returns></returns> 
     public static BaseTemplateMovement? CreateTemplateMovement(string value) => value switch
     {
-        "К центру" => new MoveToCenter(),
-        "К краю" => new MoveToRightDownBorder(),
-        _ => null,
+         "К центру" => new MoveToCenter(),
+         "К краю" => new MoveToRightDownBorder(),
+         _ => null,
     };
 }

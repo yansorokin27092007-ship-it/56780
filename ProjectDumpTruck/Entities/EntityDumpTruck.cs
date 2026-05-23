@@ -10,7 +10,7 @@ namespace ProjectDumpTruck.Entities;
 /// Класс-сущность "Самосвал"
 /// </summary>
 public class EntityDumpTruck : EntityCar
-{
+{ 
     /// <summary>
     /// Дополнительный цвет (для опциональных элементов)
     /// </summary>
@@ -24,7 +24,7 @@ public class EntityDumpTruck : EntityCar
     /// <summary>
     /// Признак (опция) наличия тента
     /// </summary>
-    public bool Tent { get; init; }
+    public bool  Tent { get; init; }
 
 
     /// <summary>
@@ -36,7 +36,7 @@ public class EntityDumpTruck : EntityCar
     /// <param name="additionalColor"></param>
     /// <param name="body"></param>
     /// <param name="tent"></param>
-    public EntityDumpTruck(int speed, double weight, Color bodyColor, Color additionalColor, bool body, bool tent) : base(speed, weight, bodyColor)
+    public EntityDumpTruck(int speed, double weight, Color bodyColor, Color additionalColor, bool body, bool tent) : base (speed, weight, bodyColor)
     {
         AdditionalColor = additionalColor;
         Body = body;

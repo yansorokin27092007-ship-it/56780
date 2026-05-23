@@ -1,4 +1,4 @@
-п»їusing ProjectDumpTruck.Drawnings;
+using ProjectDumpTruck.Drawnings;
 using ProjectDumpTruck.MovementTemplate;
 
 namespace ProjectDumpTruck;
@@ -6,22 +6,22 @@ namespace ProjectDumpTruck;
 public partial class FormDumpTruck : Form
 {
     /// <summary>
-    /// РџРѕР»Рµ-РѕР±СЉРµРєС‚ РїРѕР»РѕС‚РЅРѕ
+    /// Поле-объект полотно
     /// </summary>
     private readonly CanvasForCar _canvasForCar;
 
     /// <summary>
-    /// РџРѕР»Рµ РґР»СЏ С„РёРєСЃР°С†РёРё СЃРѕСЃС‚РѕСЏРЅРёСЏ РґР»СЏ СЃР»РµРґСѓСЋС‰РµРіРѕ С€Р°РіР° РїСЂРѕРІРµСЂРєРё РІС‹С…РѕРґР° Р·Р° РіСЂР°РЅРёС†С‹
+    /// Поле для фиксации состояния для следующего шага проверки выхода за границы
     /// </summary>
     private DirectionType _checkBordersState;
 
     /// <summary> 
-    /// РЁР°Р±Р»РѕРЅ РїРµСЂРµРјРµС‰РµРЅРёСЏ 
+    /// Шаблон перемещения 
     /// </summary> 
     private BaseTemplateMovement? _templateMovement;
 
     /// <summary>
-    /// РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ С„РѕСЂРјС‹
+    /// Инициализация формы
     /// </summary>
     public FormDumpTruck()
     {
@@ -34,12 +34,12 @@ public partial class FormDumpTruck : Form
     }
 
     /// <summary>
-    /// РџРѕР»СѓС‡РµРЅРёРµ СЃР°РјРѕСЃРІР°Р»Р°
+    /// Получение самосвала
     /// </summary>
     public void SetDrawningCar(DrawningCar car) => InsertCarObject(car);
 
     /// <summary>
-    /// Р”РѕР±Р°РІР»РµРЅРёРµ РЅР° РїРѕР»РѕС‚РЅРѕ СЃР°РјРѕСЃРІР°Р»Р°
+    /// Добавление на полотно самосвала
     /// </summary>
     /// <param name="car"></param>
     /// <param name="random"></param>
@@ -56,12 +56,12 @@ public partial class FormDumpTruck : Form
     }
 
     /// <summary>
-    /// РњРµС‚РѕРґ РїСЂРѕСЂРёСЃРѕРІРєРё РјР°С€РёРЅС‹
+    /// Метод прорисовки машины
     /// </summary>
     private void Draw() => pictureBoxDumpTruck.Image = _canvasForCar.DrawCanvas();
 
     /// <summary>
-    /// РћР±СЂР°Р±РѕС‚РєР° РЅР°Р¶Р°С‚РёСЏ РєРЅРѕРїРєРё "РЎРѕР·РґР°С‚СЊ"
+    /// Обработка нажатия кнопки "Создать"
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -77,14 +77,14 @@ public partial class FormDumpTruck : Form
     }
 
     /// <summary>
-    ///  РћР±СЂР°Р±РѕС‚РєР° РЅР°Р¶Р°С‚РёСЏ РєРЅРѕРїРєРё "РЎРѕР·РґР°С‚СЊ РїСЂРѕРґРІРёРЅСѓС‚С‹Р№ СЃР°РјРѕСЃРІР°Р»" 
+    ///  Обработка нажатия кнопки "Создать продвинутый самосвал" 
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void buttonCreateSportDumpTruck_Click(object sender, EventArgs e) => CreateObject(nameof(DrawningDumpTruck));
-
+    private void buttonCreateSportDumpTruck_Click(object sender, EventArgs e) => CreateObject(nameof(DrawningDumpTruck)); 
+    
     /// <summary>
-    /// РЎРѕР·РґР°РЅРёРµ РѕР±СЉРµРєС‚Р° РєР»Р°СЃСЃР°-РїРµСЂРµРјРµС‰РµРЅРёСЏ
+    /// Создание объекта класса-перемещения
     /// </summary>
     /// <param name="type"></param>
     private void CreateObject(string type)
@@ -101,12 +101,12 @@ public partial class FormDumpTruck : Form
                 break;
             default:
                 return;
-        }
+            }
         InsertCarObject(drawningCar, random);
     }
 
     /// <summary>
-    /// РџРµСЂРµРјРµС‰РµРЅРёРµ РѕР±СЉРµРєС‚Р° РїРѕ С„РѕСЂРјРµ (РЅР°Р¶Р°С‚РёРµ РєРЅРѕРїРѕРє РЅР°РІРёРіР°С†РёРё)
+    /// Перемещение объекта по форме (нажатие кнопок навигации)
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -137,7 +137,7 @@ public partial class FormDumpTruck : Form
     }
 
     /// <summary>
-    /// РџСЂРѕРІРµСЂРєР°, С‡С‚Рѕ РѕР±СЉРµРєС‚ РЅРµ РІС‹С…РѕРґРёС‚ Р·Р° РіСЂР°РЅРёС†С‹ РїСЂРё РЅРµРІРµСЂРЅРѕ Р·Р°РґР°РЅРЅС‹С… РєРѕРѕСЂРґРёРЅР°С‚Р°С…
+    /// Проверка, что объект не выходит за границы при неверно заданных координатах
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -168,7 +168,7 @@ public partial class FormDumpTruck : Form
     }
 
     /// <summary>
-    ///  РћР±СЂР°Р±РѕС‚РєР° РІС‹Р±РѕСЂР° СЌР»РµРјРµРЅС‚Р° РёР· РІС‹РїР°РґР°СЋС‰РµРіРѕ СЃРїРёСЃРєР°
+    ///  Обработка выбора элемента из выпадающего списка
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -190,7 +190,7 @@ public partial class FormDumpTruck : Form
     }
 
     /// <summary>
-    /// Р’С‹РїРѕР»РЅРµРЅРёРµ С€Р°РіР° РїРµСЂРµРјРµС‰РµРЅРёСЏ
+    /// Выполнение шага перемещения
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
